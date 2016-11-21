@@ -123,7 +123,7 @@
               <button type="button" class="btn btn-default">Custom</button>
             </span>
             
-            <div class="media" *ngFor="let center of testCentersData | slice:currentPage:itemsPerPage">
+            <div class="media" *ngFor="let center of testCentersData | slice:centerConfig.itemStart:centerConfig.itemSize">
               
               <div class="media-left">
                 <a href="#"></a>
@@ -136,7 +136,7 @@
               </div>
               <div class="media-right"><button type="submit" class="btn btn-primary"> Book </button></div>
             </div>
-            <ngb-pagination *ngIf="testCentersData.length" [collectionSize]="totalItems" [pageSize]="itemsPerPage" [(page)]="page" (pageChange)="onPageChage($event)"></ngb-pagination>
+            <ngb-pagination *ngIf="testCentersData.length" [collectionSize]="ngbPaginationConfig.totalItems" [pageSize]="ngbPaginationConfig.itemsPerPage" [(page)]="ngbPaginationConfig.page" (pageChange)="onPageChage($event)"></ngb-pagination>
           </div>
         </div>
       </div>

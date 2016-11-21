@@ -12,10 +12,16 @@ export class AppComponent implements OnInit {
   tests = []
   currentDate = new Date();
   money = "500";
-  totalItems: number = 0;
-  itemsPerPage: number = 2;
-  currentPage: number = 0;
-  page = 1;
+  centerConfig = {
+    itemStart: 0,
+    itemSize: 2
+  };
+  ngbPaginationConfig = {
+    totalItems: 0,
+    itemsPerPage: 2,
+    page: 1,
+    previousPage: 1
+  }
   searchObj = {
     testId: undefined
   };
@@ -24,7 +30,7 @@ export class AppComponent implements OnInit {
 
   searchSuccess(data) {
     this.testCentersData = data;
-    this.totalItems = this.testCentersData.length;
+    this.ngbPaginationConfig.totalItems = this.testCentersData.length;
   }
 
   search(newValue) {
@@ -35,7 +41,19 @@ export class AppComponent implements OnInit {
   }
 
   onPageChage(newPage) {
-    console.log(newPage);
+    if(newPage > this.ngbPaginationConfig.previousPage) {
+
+      this.centerConfig.itemStart += this.ngbPaginationConfig.itemsPerPage;
+      this.centerConfig.itemSize += this.ngbPaginationConfig.itemsPerPage;
+
+    } else if (newPage < this.ngbPaginationConfig.previousPage) {
+
+      this.centerConfig.itemStart -= this.ngbPaginationConfig.itemsPerPage;
+      this.centerConfig.itemSize -= this.ngbPaginationConfig.itemsPerPage;
+
+    }
+
+    this.ngbPaginationConfig.previousPage = newPage;
   }
 
   ngOnInit() {
