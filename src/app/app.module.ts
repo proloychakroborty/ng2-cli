@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 
 import { AppComponent } from './app.component';
-import { I18nComponent } from './components/i18n/i18n.component';
+import { I18nComponent } from './i18n/i18n.component';
 
 @NgModule({
   declarations: [
