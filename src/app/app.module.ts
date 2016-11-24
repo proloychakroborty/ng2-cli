@@ -5,13 +5,17 @@ import { HttpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { I18nComponent } from './components/i18n/i18n.component';
+import { ListCenterComponent } from './list-center/list-center.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    I18nComponent
+    I18nComponent,
+    ListCenterComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { I18nComponent } from './components/i18n/i18n.component';
             provide: TranslateLoader,
             useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
             deps: [Http] 
-        })
+        }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

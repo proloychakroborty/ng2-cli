@@ -1,0 +1,36 @@
+<!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <select class="form-control" [ngModel]="searchObj.testId" (ngModelChange)="search($event)">
+                <option value="" disabled selected style="display: none;">{{ 'CENTER_LIST.SELECT_EXAM' | translate }}</option>
+                <option value="{{test.id}}" *ngFor="let test of tests">{{test.name}}</option>
+              </select>
+            </div>
+            <span class="btn-group" role="group" >
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.THIS_WEEK' | translate }}</button>
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.THIS_MONTH' | translate }}</button>
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.CUSTOM' | translate }}</button>
+            </span>
+            
+            <div class="media" *ngFor="let center of testCentersData | slice:centerConfig.itemStart:centerConfig.itemSize">
+              
+              <div class="media-left">
+                <a href="#"></a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">{{center.locationName}}</h4>
+                <div>{{center.address1}}</div>
+                <div>{{center.city}}, {{center.state}}</div>
+                <div>{{center.country}}-{{center.zip}}</div>
+              </div>
+              <div class="media-right"><button type="submit" class="btn btn-primary"> Book </button></div>
+            </div>
+            <ngb-pagination *ngIf="testCentersData.length" [collectionSize]="ngbPaginationConfig.totalItems" [pageSize]="ngbPaginationConfig.itemsPerPage" [(page)]="ngbPaginationConfig.page" (pageChange)="onPageChage($event)"></ngb-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
