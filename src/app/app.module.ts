@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { ListCenterComponent } from './list-center/list-center.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { LogService } from 'angular2-log/log';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { MyMapComponent } from './my-map/my-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     I18nComponent,
-    ListCenterComponent
+    ListCenterComponent,
+    MyMapComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,10 @@ import { LogService } from 'angular2-log/log';
             useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
             deps: [Http] 
         }),
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
+    })
   ],
   providers: [LogService],
   bootstrap: [AppComponent]
