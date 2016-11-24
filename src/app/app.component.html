@@ -2,32 +2,32 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <img class="navbar-brand" src="assets/images/psi-small-logo.png">
-      <a class="navbar-brand" href="#">PSI Exams Online</a>
+      <a class="navbar-brand" href="#">{{ 'HOME.TITLE' | translate}}</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
 
       <!-- Start Navigation List -->
       <ul class="nav navbar-nav navbar-right">
-        <!--<li class="dropdown">
-        <language-list></language-list>
-        </li>-->
-        <li>
-          <a href="index.html">Home</a>
+        <li class="dropdown">
+          <language-list></language-list>
         </li>
         <li>
-          <a href="about.html">PSI News</a>
+          <a href="index.html">{{ 'HOME.HOME' | translate }}</a>
         </li>
         <li>
-          <a href="">PSI Bookstore</a>
+          <a href="about.html">{{ 'HOME.NEWS' | translate }}</a>
         </li>
         <li>
-          <a href="">About PSI</a> 
+          <a href="">{{ 'HOME.BOOKSTORE' | translate }}</a>
         </li>
         <li>
-          <a href="">Contact Us</a>
+          <a href="">{{ 'HOME.ABOUT' | translate }}</a> 
+        </li>
+        <li>
+          <a href="">{{ 'HOME.CONTACT_US' | translate }}</a>
         </li>
         <li style="margin-top: 1rem;">
-          <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal">Sign in</button>
+          <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal">{{ 'HOME.SIGN_IN' | translate }}</button>
         </li> 
       </ul>
       <!-- Stat Search -->
@@ -57,7 +57,7 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav" style="margin-top:2rem">
         <li class="sidebar-brand" style="height: 30px;">
-          <h4>Online Practice Test</h4>
+          <h4>{{ 'CENTER_LIST.LEFT_MENU.TITLE' | translate }}</h4>
         </li>
         <form class="col-*-3">
           <li class="form-group">
@@ -75,13 +75,13 @@
             </select>
           </li>
           <li>
-            <button type="submit" class="btn btn-primary btn-block"> Search </button>
+            <button type="submit" class="btn btn-primary btn-block"> {{ 'CENTER_LIST.LEFT_MENU.SEARCH' | translate }} </button>
           </li>
         </form> 
         <hr>
 
         <li>
-          <h4>Examination Overview</h4>
+          <h4>{{ 'CENTER_LIST.LEFT_MENU.EXAM_OVERVIEW' | translate }}</h4>
           <ul style="list-style:none;padding-left:0">
             <li> 
               <h6>Exam</h6>
@@ -118,9 +118,9 @@
               </select>
             </div>
             <span class="btn-group" role="group" >
-              <button type="button" class="btn btn-default">This week</button>
-              <button type="button" class="btn btn-default">This Month</button>
-              <button type="button" class="btn btn-default">Custom</button>
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.THIS_WEEK' | translate }}</button>
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.THIS_MONTH' | translate }}</button>
+              <button type="button" class="btn btn-default">{{ 'CENTER_LIST.CUSTOM' | translate }}</button>
             </span>
             
             <div class="media" *ngFor="let center of testCentersData | slice:centerConfig.itemStart:centerConfig.itemSize">
