@@ -8,8 +8,8 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { I18nComponent } from './components/i18n/i18n.component';
 import { ListCenterComponent } from './list-center/list-center.component';
+import { I18nComponent } from './i18n/i18n.component';
 
 @NgModule({
   declarations: [
