@@ -7,6 +7,7 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 
 import { AppComponent } from './app.component';
 import { I18nComponent } from './i18n/i18n.component';
+import { LogService } from 'angular2-log/log';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { I18nComponent } from './i18n/i18n.component';
             deps: [Http] 
         })
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
