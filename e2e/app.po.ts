@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class PSINg2Page {
+export class PsiNg2Page {
   navigateTo() {
     return browser.get('/');
   }

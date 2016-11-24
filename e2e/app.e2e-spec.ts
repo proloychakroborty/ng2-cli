@@ -1,10 +1,10 @@
-import { PSINg2Page } from './app.po';
+import { PsiNg2Page } from './app.po';
 
 describe('psi-ng2 App', function() {
-  let page: PSINg2Page;
+  let page: PsiNg2Page;
 
   beforeEach(() => {
-    page = new PSINg2Page();
+    page = new PsiNg2Page();
   });
 
   it('should display message saying app works', () => {
