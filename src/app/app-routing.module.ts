@@ -10,6 +10,11 @@ const routes: Routes = [
     redirectTo: '/list-center',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: '/list-center',
+    pathMatch: 'full'
+  },
   { path: 'list-center', component: ListCenterComponent  },
   { path: 'my-map', component: MyMapComponent },
 ];
