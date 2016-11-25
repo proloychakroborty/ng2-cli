@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Logger } from 'angular2-log4ts/src/app/core';
 
 import { TestCenterService } from '../test-center.service';
 
@@ -24,7 +25,7 @@ export class ListCenterComponent implements OnInit {
     testId: ""
   };
 
-  constructor(private testCenterService: TestCenterService) { }
+  constructor(private testCenterService: TestCenterService, private logger: Logger) { }
 
   searchSuccess(data) {
     this.testCentersData = data;
@@ -36,6 +37,7 @@ export class ListCenterComponent implements OnInit {
     this.testCenterService.searchCenter().subscribe(
       (data) => this.searchSuccess(data)
     );
+    this.logger.info('TestID', newValue);
   }
 
   onPageChage(newPage) {

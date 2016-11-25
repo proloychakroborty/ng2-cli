@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+import { LOG_LOGGER_PROVIDERS } from 'angular2-log4ts/src/app/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -35,7 +36,7 @@ import { MyMapComponent } from './my-map/my-map.component';
       apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
     })
   ],
-  providers: [],
+  providers: [LOG_LOGGER_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
