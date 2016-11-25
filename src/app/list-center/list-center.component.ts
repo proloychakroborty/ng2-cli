@@ -18,7 +18,7 @@ export class ListCenterComponent implements OnInit {
   ngbPaginationConfig = {
     totalItems: 0,
     itemsPerPage: 2,
-    page: 1,
+    currentPage: 1,
     previousPage: 1
   }
   searchObj = {
@@ -27,33 +27,32 @@ export class ListCenterComponent implements OnInit {
 
   constructor(private testCenterService: TestCenterService, private logger: Logger) { }
 
-  searchSuccess(data) {
-    this.testCentersData = data;
-    this.ngbPaginationConfig.totalItems = this.testCentersData.length;
-  }
-
   search(newValue) {
     this.searchObj.testId = newValue;
     this.testCenterService.searchCenter().subscribe(
-      (data) => this.searchSuccess(data)
+      (data) => {
+        this.testCentersData = data;
+        this.ngbPaginationConfig.totalItems = this.testCentersData.length;
+        this.logger.info("ngbPaginationConfig", this.ngbPaginationConfig);
+      }
     );
     this.logger.info('TestID', newValue);
   }
 
-  onPageChage(newPage) {
-    if(newPage > this.ngbPaginationConfig.previousPage) {
+  onPageChage(e) {
+    if(e.page > this.ngbPaginationConfig.previousPage) {
 
-      this.centerConfig.itemStart += this.ngbPaginationConfig.itemsPerPage;
-      this.centerConfig.itemSize += this.ngbPaginationConfig.itemsPerPage;
+      this.centerConfig.itemStart += e.itemsPerPage;
+      this.centerConfig.itemSize += e.itemsPerPage;
 
-    } else if (newPage < this.ngbPaginationConfig.previousPage) {
+    } else if (e.page < this.ngbPaginationConfig.previousPage) {
 
-      this.centerConfig.itemStart -= this.ngbPaginationConfig.itemsPerPage;
-      this.centerConfig.itemSize -= this.ngbPaginationConfig.itemsPerPage;
+      this.centerConfig.itemStart -= e.itemsPerPage;
+      this.centerConfig.itemSize -= e.itemsPerPage;
 
     }
 
-    this.ngbPaginationConfig.previousPage = newPage;
+    this.ngbPaginationConfig.previousPage = e.page;
   }
 
   ngOnInit() {

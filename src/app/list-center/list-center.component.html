@@ -28,7 +28,8 @@
               </div>
               <div class="media-right"><button type="submit" class="btn btn-primary"> Book </button></div>
             </div>
-            <ngb-pagination *ngIf="testCentersData.length" [collectionSize]="ngbPaginationConfig.totalItems" [pageSize]="ngbPaginationConfig.itemsPerPage" [(page)]="ngbPaginationConfig.page" (pageChange)="onPageChage($event)"></ngb-pagination>
+            <pagination *ngIf="testCentersData.length" [boundaryLinks]="true" [totalItems]="ngbPaginationConfig.totalItems" [itemsPerPage]="ngbPaginationConfig.itemsPerPage" [(ngModel)]="ngbPaginationConfig.currentPage" 
+                (pageChanged)="onPageChage($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
           </div>
         </div>
       </div>

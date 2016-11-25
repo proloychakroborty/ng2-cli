@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 import { LOG_LOGGER_PROVIDERS } from 'angular2-log4ts/src/app/core';
+import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; //Ng2BootstrapModule to import all
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +25,6 @@ import { MyMapComponent } from './my-map/my-map.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot(),
     TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
@@ -34,7 +33,8 @@ import { MyMapComponent } from './my-map/my-map.component';
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
-    })
+    }),
+    PaginationModule
   ],
   providers: [LOG_LOGGER_PROVIDERS],
   bootstrap: [AppComponent]
