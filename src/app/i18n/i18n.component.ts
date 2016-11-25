@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
-import {LogService} from 'angular2-log/log';
 
 @Component({
   selector: 'language-list',
@@ -10,7 +9,7 @@ import {LogService} from 'angular2-log/log';
 export class I18nComponent implements OnInit {
 
 
-  constructor(private translate: TranslateService, private logservice:LogService) {
+  constructor(private translate: TranslateService) {
     translate.addLangs(["en", "es"]);
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
@@ -21,7 +20,7 @@ export class I18nComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.logservice.info('ngOnInit in i18n component');
+    
   }
 
 }

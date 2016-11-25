@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListCenterComponent } from './list-center/list-center.component';
 import { I18nComponent } from './i18n/i18n.component';
-import { LogService } from 'angular2-log/log';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyMapComponent } from './my-map/my-map.component';
 
@@ -36,7 +35,7 @@ import { MyMapComponent } from './my-map/my-map.component';
       apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
     })
   ],
-  providers: [LogService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
