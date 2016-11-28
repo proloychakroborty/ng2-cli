@@ -5,6 +5,8 @@ import { HttpModule, Http } from '@angular/http';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 import { LOG_LOGGER_PROVIDERS } from 'angular2-log4ts/src/app/core';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; //Ng2BootstrapModule to import all
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppLoginComponent, AppLoginContent } from './login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,7 +21,10 @@ import { MyMapComponent } from './my-map/my-map.component';
     AppComponent,
     I18nComponent,
     ListCenterComponent,
-    MyMapComponent
+    MyMapComponent,
+    AppLoginComponent, 
+    AppLoginContent
+
   ],
   imports: [
     BrowserModule,
@@ -34,8 +39,10 @@ import { MyMapComponent } from './my-map/my-map.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
     }),
-    PaginationModule
+    PaginationModule,
+    NgbModule.forRoot(),
   ],
+  entryComponents: [AppLoginContent],
   providers: [LOG_LOGGER_PROVIDERS],
   bootstrap: [AppComponent]
 })
