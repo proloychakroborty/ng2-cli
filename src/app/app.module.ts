@@ -15,6 +15,10 @@ import { ListCenterComponent } from './list-center/list-center.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyMapComponent } from './my-map/my-map.component';
+import { PsiNewsComponent } from './psi-news/psi-news.component';
+import { PsiBookstoreComponent } from './psi-bookstore/psi-bookstore.component';
+import { AboutPsiComponent } from './about-psi/about-psi.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,7 @@ import { MyMapComponent } from './my-map/my-map.component';
     ListCenterComponent,
     MyMapComponent,
     AppLoginComponent, 
-    AppLoginContent
+    AppLoginContent, PsiNewsComponent, PsiBookstoreComponent, AboutPsiComponent, ContactUsComponent
 
   ],
   imports: [
