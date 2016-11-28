@@ -9,7 +9,7 @@ import { AboutPsiComponent } from './about-psi/about-psi.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
-  { path: 'list-center', component: ListCenterComponent  },
+  { path: 'list-center', component: ListCenterComponent },
   { path: 'my-map', component: MyMapComponent },
   { path: 'psi-news', component: PsiNewsComponent },
   { path: 'psi-bookstore', component: PsiBookstoreComponent },
