@@ -5,6 +5,8 @@ import { ListCenterComponent } from './list-center/list-center.component';
 import { MyMapComponent } from './my-map/my-map.component';
 
 const routes: Routes = [
+  { path: 'list-center', component: ListCenterComponent  },
+  { path: 'my-map', component: MyMapComponent },
   {
     path: '',
     redirectTo: '/list-center',
@@ -14,9 +16,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/list-center',
     pathMatch: 'full'
-  },
-  { path: 'list-center', component: ListCenterComponent  },
-  { path: 'my-map', component: MyMapComponent },
+  }
 ];
 
 @NgModule({
