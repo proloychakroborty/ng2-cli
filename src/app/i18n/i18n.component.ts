@@ -7,7 +7,8 @@ import { TranslateService } from 'ng2-translate';
   styleUrls: ['./i18n.component.css']
 })
 export class I18nComponent implements OnInit {
-
+  public disabled:boolean = false;
+  public status:{isopen:boolean} = {isopen: false};
 
   constructor(private translate: TranslateService) {
     translate.addLangs(["en", "es"]);
@@ -17,6 +18,11 @@ export class I18nComponent implements OnInit {
     translate.use('en');
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+  }
+
+  changeLang(e, lang) {
+    this.translate.use(lang);
+    e.preventDefault();
   }
 
   ngOnInit() {

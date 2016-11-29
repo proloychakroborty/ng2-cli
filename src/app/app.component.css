@@ -2,6 +2,7 @@
 .navbar-inverse .navbar-nav > .active > a:hover {
     background-color: #8A118A;
 }
-.navbar-inverse .navbar-nav > .active > a:hover {
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff !important;
 }

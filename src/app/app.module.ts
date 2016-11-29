@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { LOG_LOGGER_PROVIDERS } from 'angular2-log4ts/src/app/core';
-import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; //Ng2BootstrapModule to import all
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppLoginComponent, AppLoginContent } from './login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { ChatService } from './shared/services/chat.service';
+import { WebSocketService } from './shared/services/websocket.service';
 
 import { AppComponent } from './app.component';
 import { ListCenterComponent } from './list-center/list-center.component';
@@ -19,6 +22,8 @@ import { PsiNewsComponent } from './psi-news/psi-news.component';
 import { PsiBookstoreComponent } from './psi-bookstore/psi-bookstore.component';
 import { AboutPsiComponent } from './about-psi/about-psi.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CreateMessage } from './create-message/create-message.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +32,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ListCenterComponent,
     MyMapComponent,
     AppLoginComponent,
-    AppLoginContent, PsiNewsComponent, PsiBookstoreComponent, AboutPsiComponent, ContactUsComponent
-
+    AppLoginContent, PsiNewsComponent, PsiBookstoreComponent, AboutPsiComponent, ContactUsComponent,
+    ChatComponent, CreateMessage
   ],
   imports: [
     BrowserModule,
@@ -43,11 +48,11 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyARGbyReYvoWgvHAOixsR8272yAYSxfWaE'
     }),
-    PaginationModule,
+    Ng2BootstrapModule,
     NgbModule.forRoot(),
   ],
   entryComponents: [AppLoginContent],
-  providers: [LOG_LOGGER_PROVIDERS],
+  providers: [LOG_LOGGER_PROVIDERS, ChatService, WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
