@@ -1,3 +1,17 @@
-<select #langSelect (change)="translate.use(langSelect.value)">
+<!--<select #langSelect (change)="translate.use(langSelect.value)">
   <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-</select>
+</select>-->
+
+<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ translate.currentLang }} <span class="caret"></span></a>
+<ul class="dropdown-menu">
+  <li *ngFor="let lang of translate.getLangs()"><a href="#" (click)="changeLang($event, lang)">{{ lang }}</a></li>
+</ul>-->
+
+<div class="btn-group" dropdown [(isOpen)]="status.isopen">
+  <button id="single-button" type="button" class="btn btn-default" dropdownToggle [disabled]="disabled">
+      {{ translate.currentLang | uppercase }} <span class="caret"></span>
+    </button>
+  <ul dropdownMenu role="menu" aria-labelledby="single-button">
+    <li role="menuitem" *ngFor="let lang of translate.getLangs()"><a class="dropdown-item" href="#" (click)="changeLang($event, lang)">{{ lang | uppercase }}</a></li>
+  </ul>
+</div>
