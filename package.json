@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14",
+    "@reactivex/rxjs": "^5.0.0-rc.4",
     "@types/node": "^6.0.51",
     "angular2-google-maps": "^0.16.0",
     "angular2-in-memory-web-api": "0.0.21",

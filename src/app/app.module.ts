@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ChatService } from './shared/services/chat.service';
 import { WebSocketService } from './shared/services/websocket.service';
+import { BookingService } from './shared/services/booking.service';
 
 import { AppComponent } from './app.component';
 import { ListCenterComponent } from './list-center/list-center.component';
@@ -52,7 +53,7 @@ import { ChatComponent } from './chat/chat.component';
     NgbModule.forRoot(),
   ],
   entryComponents: [AppLoginContent],
-  providers: [LOG_LOGGER_PROVIDERS, ChatService, WebSocketService],
+  providers: [LOG_LOGGER_PROVIDERS, ChatService, WebSocketService, BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
