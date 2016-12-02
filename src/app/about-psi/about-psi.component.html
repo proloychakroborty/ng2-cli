@@ -11,4 +11,8 @@
   </div>
   
   <button class="btn btn-default" (click)="createBooking()">Create Booking</button>
+  <button class="btn btn-default" (click)="fetchCenterList()">Test Center List</button>
 </form>
+<ul>
+  <li *ngFor="let l of list">{{l.location_name}}</li>
+</ul>

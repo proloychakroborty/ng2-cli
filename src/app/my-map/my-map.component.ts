@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-map.component.css']
 })
 export class MyMapComponent implements OnInit {
-  
+
   title: string = 'My first angular2-google-maps project';
   lat: number = 51.678418;
   lng: number = 7.809007;
@@ -14,6 +14,12 @@ export class MyMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
   }
 
 }

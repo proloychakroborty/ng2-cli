@@ -16,6 +16,12 @@ export class BookingService {
 
     }
 
+    public fetchCenterList() {
+        const path = 'http://apidevatlascore01.resources.psi:9082/atlasApi/1.0.9/tests/20347/locations?start_date=2016-09-01T00:00:00Z&end_date=2016-12-30T00:00:00Z&zip=770088&ext_time=40&exam_length=100&is_ada=true&country=US&show_dates=false&search_radius=20000&search_radius_unit=MI&calculate_distance=false';
+        return this.http.get(path)
+            .map(response => response.json());
+    }
+
     /**
      * Web service endpoint to cancel existing booking specified by booking_id
      * This web service endpoint cancels the existing booking specified by booking_id.

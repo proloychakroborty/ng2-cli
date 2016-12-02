@@ -11,6 +11,7 @@ export class AboutPsiComponent implements OnInit {
 
   data: model.BookingRequest;
   tests:model.BookingResponse;
+  list:any;
 
   constructor(private bookingService: BookingService) {
 
@@ -31,6 +32,12 @@ export class AboutPsiComponent implements OnInit {
   createBooking(){
     this.bookingService.createBooking('psiuniqueid1234', this.data, 'Sunil').subscribe(
       (data) => this.tests = data
+    );
+  }
+
+  fetchCenterList(){
+    this.bookingService.fetchCenterList().subscribe(
+      (data) => { this.list = data.locations;}
     );
   }
 
