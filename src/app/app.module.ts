@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { LOG_LOGGER_PROVIDERS } from 'angular2-log4ts/src/app/core';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppLoginComponent, AppLoginContent } from './login/login.component';
+import { FormlyModule, FormlyBootstrapModule } from 'ng2-formly';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,6 +26,7 @@ import { AboutPsiComponent } from './about-psi/about-psi.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CreateMessage } from './create-message/create-message.component';
 import { ChatComponent } from './chat/chat.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,12 @@ import { ChatComponent } from './chat/chat.component';
     MyMapComponent,
     AppLoginComponent,
     AppLoginContent, PsiNewsComponent, PsiBookstoreComponent, AboutPsiComponent, ContactUsComponent,
-    ChatComponent, CreateMessage
+    ChatComponent, CreateMessage, RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
@@ -51,6 +54,8 @@ import { ChatComponent } from './chat/chat.component';
     }),
     Ng2BootstrapModule,
     NgbModule.forRoot(),
+     FormlyModule.forRoot(),
+    FormlyBootstrapModule,
   ],
   entryComponents: [AppLoginContent],
   providers: [LOG_LOGGER_PROVIDERS, ChatService, WebSocketService, BookingService],
