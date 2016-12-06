@@ -2,59 +2,45 @@ import { Component, OnInit } from '@angular/core';
 import {Validators, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig} from 'ng2-formly';
 
+import { Logger } from 'angular2-log4ts/src/app/core';
+import { RegisterFromService } from '../shared/services/register-form.service';
+
 @Component({
   selector: 'app-register',
-  // templateUrl: './register.component.html',
+  templateUrl: './register.component.html',
   template: `
     <form class="formly" role="form" novalidate [formGroup]="form" (ngSubmit)="submit(user)">
-        <formly-form [model]="user" [fields]="userFields">
-            <button type="submit" class="btn btn-default">Button</button>
+        <formly-form [model]="user" [fields]="fields">
+            <button type="submit" class="btn btn-default">Register</button>
         </formly-form>
     </form>
   `, 
-  styleUrls: ['./register.component.css']
+
+  styleUrls: ['./register.component.css'],
+  providers: [RegisterFromService]
 })
 
 
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   form: FormGroup = new FormGroup({});
-  userFields: FormlyFieldConfig = [{
-    className: 'row',
-    fieldGroup: [{
-        className: 'col-xs-6',
-        key: 'email',
-        type: 'input',
-        templateOptions: {
-            type: 'email',
-            label: 'Email address',
-            placeholder: 'Enter email'
-        },
-        validators: {
-          validation: Validators.compose([Validators.required])
-        }
-    }, {
-        className: 'col-xs-6',
-        key: 'password',
-        type: 'input',
-        templateOptions: {
-            type: 'password',
-            label: 'Password',
-            placeholder: 'Password',
-            pattern: ''
-        },
-        validators: {
-          validation: Validators.compose([Validators.required])
-        }
-    }]
-  }];
- 
+  fields:FormlyFieldConfig= [];
   user = {
     email: 'email@gmail.com',
-    checked: false
+    password: 0
   };
  
   submit(user) {
     console.log(user);
   }
+
+    constructor(private registerFormService: RegisterFromService, private logger: Logger) { }
+
+   ngOnInit() {
+    this.registerFormService.getFormIds().subscribe(
+      (data) => this.fields = data
+    );
+    this.logger.info(this.fields);
+  }
+
 }
 

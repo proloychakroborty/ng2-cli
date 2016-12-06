@@ -1,0 +1,25 @@
+[
+  {      "className": "col-xs-6",
+        "key": "email",
+        "type": "input",
+        "templateOptions": {
+            "type": "email",
+            "label": "Email address",
+            "placeholder": "Enter email"
+        }
+      
+    },
+    
+     {
+        "className": "col-xs-6",
+        "key": "password",
+        "type": "input",
+        "templateOptions": {
+            "type": "password",
+            "label": "Password",
+            "placeholder": "Password",
+            "pattern": ""
+        }
+     }
+]
+ 
