@@ -355,3 +355,9 @@ fieldset[disabled] .btn-primary.focus {
 a:hover,a:focus {
   color:#204d74!important;
 }
+.nav > li > a {
+    padding: 10px;
+}
+.navbar-btn{
+    margin-left: 8px;
+}
