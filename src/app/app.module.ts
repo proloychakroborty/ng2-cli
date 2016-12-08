@@ -27,6 +27,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CreateMessage } from './create-message/create-message.component';
 import { ChatComponent } from './chat/chat.component';
 import { RegisterComponent } from './register/register.component';
+import { ScheduleTestComponent } from './schedule-test/schedule-test.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { RegisterComponent } from './register/register.component';
     MyMapComponent,
     AppLoginComponent,
     AppLoginContent, PsiNewsComponent, PsiBookstoreComponent, AboutPsiComponent, ContactUsComponent,
-    ChatComponent, CreateMessage, RegisterComponent
+    ChatComponent, CreateMessage, RegisterComponent, ScheduleTestComponent
   ],
   imports: [
     BrowserModule,

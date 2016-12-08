@@ -7,7 +7,8 @@ import { PsiNewsComponent } from './psi-news/psi-news.component';
 import { PsiBookstoreComponent } from './psi-bookstore/psi-bookstore.component';
 import { AboutPsiComponent } from './about-psi/about-psi.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { ScheduleTestComponent } from './schedule-test/schedule-test.component';
 
 const routes: Routes = [
   { path: 'list-center', component: ListCenterComponent },
@@ -17,14 +18,15 @@ const routes: Routes = [
   { path: 'about-psi', component: AboutPsiComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'app-schedule-test', component: ScheduleTestComponent },
   {
     path: '',
-    redirectTo: '/list-center',
+    redirectTo: '/app-schedule-test',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: '/list-center',
+    redirectTo: '/app-schedule-test',
     pathMatch: 'full'
   }
 ];
