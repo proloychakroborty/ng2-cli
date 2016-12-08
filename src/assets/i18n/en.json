@@ -1,14 +1,12 @@
 {
 	"LOGIN":{},
 	"HOME":{
-		"TITLE":"PSI Exams Online",
-		"HOME":"Home",
-		"NEWS":"PSI News",
-		"BOOKSTORE":"PSI Bookstore",
-		"ABOUT":"About PSI",
-		"CONTACT_US":"Contact Us",
-		"SIGN_IN":"Sign In",
-		"REGISTER":"Register"
+		"CANDIDATE":"CANDIDATE",
+		"TEST":"TEST",
+		"PSI SERVICES":"PSI SERVICES",
+		"ABOUT PSI":"About PSI",
+		"PROFILE":"PROFILE",
+		"SIGN_IN":"Sign In"
 
 	},
 	"CENTER_LIST":{

@@ -1,14 +1,12 @@
 {
 	"LOGIN":{},
 	"HOME":{
-		"TITLE":"Exámenes PSI en línea",
-		"HOME":"Casa",
-		"NEWS":"PSI Noticias",
-		"BOOKSTORE":"PSI Librería",
-		"ABOUT":"Acerca de PSI",
-		"CONTACT_US":"Contáctenos",
-		"SIGN_IN":"Registrarse",
-		"REGISTER":"Registro"
+		"CANDIDATE":"Candidato",
+		"TEST":"Prueba",
+		"PSI SERVICES":"Los servicios de PSI",
+		"ABOUT PSI":"Acerca de PSI",
+		"PROFILE":"Perfil",
+		"SIGN_IN":"Registrarse"
 
 	},
 	"CENTER_LIST":{

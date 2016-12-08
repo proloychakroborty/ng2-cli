@@ -1,115 +1,88 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img class="navbar-brand" src="assets/images/psi-small-logo.png">
-      <a class="navbar-brand" href="#">{{ 'HOME.TITLE' | translate}}</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-
-      <!-- Start Navigation List -->
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <language-list></language-list>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/list-center">{{ 'HOME.HOME' | translate }}</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/psi-news">{{ 'HOME.NEWS' | translate }}</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/psi-bookstore">{{ 'HOME.BOOKSTORE' | translate }}</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/about-psi">{{ 'HOME.ABOUT' | translate }}</a> 
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/contact-us">{{ 'HOME.CONTACT_US' | translate }}</a>
-        </li>
-         <li routerLinkActive="active">
-          <a routerLink="/register">{{ 'HOME.REGISTER' | translate }}</a>
-        </li>
-        <li>
-         <template ngbModalContainer></template>
-         <app-login-component></app-login-component>
-        </li> 
-      </ul>
-      <!-- Stat Search -->
-      <!-- <li>
-         <span class="search-side" style="margin-top: 0px;">
-             <a class="show-search"><i class="glyphicon glyphicon-search"></i></a>
-           </span>
-           </li>
-         </ul> -->
-      <!-- End Search -->
-
-      <!-- End Navigation List -->    
-
-    </div><!--/.navbar-collapse -->
-  </div>
-</nav>
-
-<!-- Landing page with login screen partial-->
-
-
-<!-- Home page after login partial-->
-<!--landing partial -->
-<div class="container">
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav" style="margin-top:2rem">
-        <li class="sidebar-brand" style="height: 30px;">
-          <h4>{{ 'CENTER_LIST.LEFT_MENU.TITLE' | translate }}</h4>
-        </li>
-        <form class="col-*-3">
-          <li class="form-group">
-            <input type="text" placeholder="AWS Cerificaion" class="form-control">
-          </li>
-          <li class="form-group">
-            <input type="text" placeholder="24,West Street, LA" class="form-control">
-          </li>
-          <li class="form-group">
-            <select class="form-control">
-              <option value="5">Within 5 miles</option>
-              <option value="10">Within 10 miles</option>
-              <option value="15">Within 15 miles</option>
-              <option value="20">Within 20 miles</option>
-            </select>
-          </li>
-          <li>
-            <button type="submit" class="btn btn-primary btn-block"> {{ 'CENTER_LIST.LEFT_MENU.SEARCH' | translate }} </button>
-          </li>
-        </form> 
-        <hr>
-
-        <li>
-          <h4>{{ 'CENTER_LIST.LEFT_MENU.EXAM_OVERVIEW' | translate }}</h4>
-          <ul style="list-style:none;padding-left:0">
-            <li> 
-              <h6>Exam</h6>
-              <h6>AWS Certification</h6>    
+<div class="row">
+   <header class="top-header">
+      <div class="col-md-12 pull-right padding0">
+         <ul class="nav nav-tabs pull-right responsive hidden-xs hidden-sm" id="myTab">
+            <li class="test-class active"><a class="deco-none red-class" href="#resp-tab1"><i class="fa fa-info-circle" aria-hidden="true"></i> Help </a></li>
+            <li class="test-class"><a href="#resp-tab2"><i class="fa fa-question-circle" aria-hidden="true"></i>FAQ</a></li>
+            <li class=""><a class="deco-none" href="#resp-tab3"><i class="fa fa-commenting-o" aria-hidden="true"></i> Chat</a></li>
+            <li class="dropdown">
+               <a class="dropdown-toggle" type="button" data-toggle="dropdown">English
+               <span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a href="# ">Test</a></li>
+                  <li><a href="# ">Test</a></li>
+                  <li><a href="# ">Test</a></li>
+               </ul>
             </li>
-            <!--date and currency filter display according to locale-->
-            <li> 
-              <span>Date : </span>
-              <span>{{currentDate | date:'longDate'}}</span>    
+         </ul>
+      </div>
+      <div class="clearfix "></div>
+   </header>
+   <header class="nav-header">
+      <div class="col-xs-6 col-sm-6 col-md-2">
+         <div class="logo-img">
+            <img src="assets/images/Asset-PSI-Logo.png" class="img-responsive" alt="PSI-logo">
+         </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-10 m-top-10 pull-right padding0">
+         <ul class="nav nav-tabs responsive hidden-xs hidden-sm pull-right" id="myTab">
+            <li>
+               <language-list></language-list>
             </li>
+            <li class="test-class active"><a class="deco-none" href="#resp-tab1"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li class="test-class" routerLinkActive="active"><a routerLink="/list-center">{{ 'HOME.CANDIDATE' | translate }}</a></li>
+            <li class="" routerLinkActive="active"><a class="deco-none" routerLink="/psi-news">{{ 'HOME.TEST' | translate }}</a></li>
+            <li class="" routerLinkActive="active"><a class="deco-none" routerLink="/psi-bookstore">{{ 'HOME.PSI SERVICES' | translate }}</a></li>
+            <li class=""routerLinkActive="active"><a class="deco-none" routerLink="/about-psi">{{ 'HOME.ABOUT PSI' | translate }}</a></li>
+            <li class="dropdown" routerLinkActive="active">
+               <a class="dropdown-toggle" type="button" data-toggle="dropdown" routerLink="/contact-us">{{ 'HOME.PROFILE' | translate }}
+               <span class="caret "></span></a>
+               <ul class="dropdown-menu ">
+                  <li><a href="# ">HTML</a></li>
+                  <li><a href="# ">CSS</a></li>
+                  <li><a href="# ">JavaScript</a></li>
+               </ul>
+            </li>
+            <li>
+               <template ngbModalContainer></template>
+               <app-login-component></app-login-component>
+            </li>
+         </ul>
+      </div>
+   </header>
+</div>
+<div>
+   <router-outlet></router-outlet>
+</div>
 
-            <li> 
-              <span>Fees : </span>
-              <span>{{money | currency}}</span>   
-            </li>              
-          </ul>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-      </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+<footer>
+<nav class="navbar  navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="imgFooter" src="assets/images/Asset-PSI-Logo.png" alt="PSI-logo"></a>
+            </div>
 
-    <router-outlet></router-outlet>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><small>2000-2016 All rights are reserved</small> <span class="sr-only">(current)</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">SITE MAP</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                    <li><a href="#">PSI CORPORATE</a></li>
 
-  </div>  
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    </footer>
